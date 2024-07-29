@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder,FormGroup,FormControl, Validators } from '@angular/forms';
-
-import { StoreDataService } from '../store-data/store-data.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -21,7 +19,6 @@ export class SignUpComponent {
 
   constructor(
     private fb : FormBuilder,
-    private data: StoreDataService,
     private router: Router,
   ){}
 
