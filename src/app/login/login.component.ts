@@ -40,10 +40,10 @@ export class LoginComponent {
   onFocusOut(controlName: string) {
     const control = this.frm_Login.get(controlName);
     if (control) {
-      control.markAsTouched(); // Mark the control as touched on focus out
+      control.markAsTouched();
       console.log(`${controlName} - Touched: ${control.touched}, Invalid: ${control.invalid}`);
     }
-    return control?.invalid; // Return the control's invalid state
+    return control?.invalid; 
 
   }
 
