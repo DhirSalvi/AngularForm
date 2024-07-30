@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder,FormGroup,FormControl, Validators } from '@angular/forms';
-
+import { MessagesModule } from 'primeng/messages';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 
 
@@ -23,10 +24,12 @@ export class LoginComponent {
   constructor(
     private fb : FormBuilder,
     private router : Router,
+    private messageService: MessageService,
 
   ){}
 
   ngOnInit(){
+
     const formData = sessionStorage.getItem('formData');
     this.storedFormData = formData ? JSON.parse(formData) : {};
     console.log(formData);
@@ -37,30 +40,12 @@ export class LoginComponent {
     })
   }
 
-  onFocusOut(controlName: string) {
-    const control = this.frm_Login.get(controlName);
-    if (control) {
-      control.markAsTouched();
-      console.log(`${controlName} - Touched: ${control.touched}, Invalid: ${control.invalid}`);
-    }
-    return control?.invalid; 
-
-  }
-
   isInvalid(controlName: string): boolean {
     const control = this.frm_Login.get(controlName);
     return control?.touched && control?.invalid;
   }
 
-  onSubmit() {
-    if (this.isValidCredential()) {
-      console.log('Login successful');
-      this.router.navigate(['/content']);
-    } else {
-      console.log('Invalid credentials');
-      // Handle invalid login case here
-    }
-  }
+
 
   enableSubmit() {
     if(
@@ -70,6 +55,7 @@ export class LoginComponent {
       {return true}
 
       else{
+
         return false;
       }
     }
@@ -82,5 +68,20 @@ export class LoginComponent {
         console.log("--------------",control2,"--------------");
         return control1 === control2;
       });
+    }
+
+    displayMessage(){
+      this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Invalid Credentials' });
+    }
+
+    onSubmit() {
+      if (this.isValidCredential()) {
+        console.log('Login successful');
+        this.router.navigate(['/content']);
+      } else {
+        this.displayMessage()
+        console.log('Invalid credentials');
+
+      }
     }
 }

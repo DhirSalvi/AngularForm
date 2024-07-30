@@ -6,8 +6,7 @@
       <div class="form-components">
         <div class="Username">
           <p-floatLabel>
-            <!-- <i class="pi pi-user"></i> -->
-            <input type="text" pInputText formControlName="Username" id="Username" [style]="{'width':'100%'}" (focusout)="onFocusOut('Username')">
+            <input type="text" pInputText formControlName="Username" id="Username" [style]="{'width':'100%'}">
             <label for="Username">Username</label>
           </p-floatLabel>
           <div *ngIf="Username.touched">
@@ -16,23 +15,21 @@
         </div>
         <div class="Password">
           <p-floatLabel>
-            <!-- <div *ngIf="isInvalid('Password')" class="ng-invalid ng-dirty"></div> -->
             <p-password id="Password" type="password" placeholder="Password" formControlName="Password"
               styleClass="p-password p-component p-inputwrapper p-input-icon-right" class="Password" [style]="{'width':'100%'}"
-              [inputStyle]="{'width':'100%'}" [toggleMask]="true" (focusout)="onFocusOut('Password')">
+              [inputStyle]="{'width':'100%'}" [toggleMask]="true">
               </p-password>
             <label for="Password">Password</label>
           </p-floatLabel>
           <div *ngIf="Password.touched">
-            <small *ngIf="Password.errors?.required && ConfirmPassword.value==''" class="invalid-text">Required</small>
+            <small *ngIf="Password.errors?.required && Password.value==''" class="invalid-text">Required</small>
           </div>
         </div>
         <div class="ConfirmPassword">
           <p-floatLabel>
-            <!-- <div *ngIf="isInvalid('ConfirmPassword')" class="ng-invalid ng-dirty"></div> -->
             <p-password id="ConfirmPassword" type="password" placeholder="Confirm Password" formControlName="ConfirmPassword"
               styleClass="p-password p-component p-inputwrapper p-input-icon-right"  [style]="{'width':'100%'}"
-              [inputStyle]="{'width':'100%'}" [toggleMask]="true" [feedback]="false" (focusout)="onFocusOut('ConfirmPassword')">
+              [inputStyle]="{'width':'100%'}" [toggleMask]="true" [feedback]="false">
               </p-password>
             <label for="ConfirmPassword">Confirm Password</label>
           </p-floatLabel>

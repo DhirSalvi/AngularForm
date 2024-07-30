@@ -6,24 +6,23 @@
         <div class="form-components">
           <div class="Username">
             <p-floatLabel>
-              <!-- <i class="pi pi-user"></i> -->
-              <input type="text" pInputText formControlName="Username" id="Username" [style]="{'width':'100%'}" (focusout)="onFocusOut('Username')">
+              <input type="text" pInputText formControlName="Username" id="Username" [style]="{'width':'100%'}">
               <label for="Username">Username</label>
             </p-floatLabel>
             <small *ngIf="isInvalid('Username')" class="invalid-text">Required</small>
           </div>
           <div class="Password">
             <p-floatLabel>
-              <!-- <div *ngIf="isInvalid('Password')" class="ng-invalid ng-dirty"></div> -->
               <p-password id="Password" type="password" placeholder="Password" formControlName="Password"
                 styleClass="p-password p-component p-inputwrapper p-input-icon-right"  [style]="{'width':'100%'}"
-                [inputStyle]="{'width':'100%'}" [toggleMask]="true" (focusout)="onFocusOut('Password')">
+                [inputStyle]="{'width':'100%'}" [toggleMask]="true"  [feedback]="false">
                 </p-password>
               <label for="Password">Password</label>
             </p-floatLabel>
             <small *ngIf="isInvalid('Password')" class="invalid-text">Required</small>
           </div>
           <button type="submit" (click)="onSubmit();isValidCredential()" [disabled]="!enableSubmit()">Login</button><br><br>
+          <p-messages></p-messages>
           <span>Don't have an account yet? <a routerLink="/signup">Create one</a></span>
         </div>
       </form>

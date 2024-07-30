@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder,FormGroup,FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -32,24 +33,11 @@ export class SignUpComponent {
     );
   }
 
-  onFocusOut(controlName: string) {
-    const control = this.frm_SignUp.get(controlName);
-    if (control) {
-      control.markAsTouched();
-      console.log(`${controlName} - Touched: ${control.touched}, Invalid: ${control.invalid}`);
-    }
-    return control?.invalid;
-
-  }
-
   passwordMatch(formGroup: FormGroup):void{
     const password = formGroup.get('Password');
     const cpassword = formGroup.get('ConfirmPassword');
     if(password && cpassword && (password.value != cpassword.value)){
       cpassword.setErrors({PasswordMismatch : true})
-    }
-    else {
-      // cpassword.setErrors(null);
     }
   }
 
@@ -60,9 +48,9 @@ export class SignUpComponent {
 
 enableSubmit() {
   if(
-      this.Username.value &&
-      this.Password.value &&
-      this.ConfirmPassword.value
+      this.Username.value && !this.Username.invalid &&
+      this.Password.value && !this.Password.invalid &&
+      this.ConfirmPassword.value && !this.ConfirmPassword.invalid
     )
     {return true}
 

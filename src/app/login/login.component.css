@@ -1,26 +1,4 @@
 
-/* .form-container{
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: url('../../assets/background-image.png');
-  background-size: cover;
-}
-.container{
- background-color: rgba(255, 255, 255, 0.25);
- backdrop-filter: blur(3px);
- border-radius: 10px;
- box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
-}
-.form-title{
-  margin:10px;
-}
-
-
-:host ::ng-deep.form-component{
-    width: 100%;
-} */
-
 .d-flex {
   display: flex;
   justify-content: center;

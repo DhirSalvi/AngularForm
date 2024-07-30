@@ -14,6 +14,11 @@ import { MatInputModule } from '@angular/material/input';
 import { InputIconModule } from 'primeng/inputicon';
 import { IconFieldModule } from 'primeng/iconfield';
 import { ContentComponent } from './content/content.component';
+import { MessagesModule } from 'primeng/messages';
+import { Message, MessageService } from 'primeng/api';
+import { Toast } from 'primeng/toast';
+
+
 
 
 @NgModule({
@@ -35,9 +40,12 @@ import { ContentComponent } from './content/content.component';
     MatInputModule,
     InputIconModule,
     IconFieldModule,
+    MessagesModule,
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    MessageService,
+    Toast,
   ],
   bootstrap: [AppComponent]
 })
