@@ -3,6 +3,7 @@ import { FormBuilder,FormGroup,FormControl, Validators } from '@angular/forms';
 import { MessagesModule } from 'primeng/messages';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 
 
@@ -10,7 +11,21 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  styleUrl: './login.component.css',
+  animations: [
+    trigger('slideInFromTop', [
+      state('void', style({ transform: 'translateY(-100%)', opacity: 0 })),
+      transition('void <=> *', [
+        animate('500ms ease-out')
+      ])
+    ]),
+    trigger('slideInFromBottom', [
+      state('void', style({ transform: 'translateY(100%)', opacity: 0 })),
+      transition('void <=> *', [
+        animate('500ms ease-out')
+      ])
+    ])
+  ]
 })
 export class LoginComponent {
 
@@ -28,7 +43,16 @@ export class LoginComponent {
 
   ){}
 
+  showTopContent = false;
+  showBottomContent = false;
+
+
   ngOnInit(){
+
+    setTimeout(() => {
+      this.showTopContent = true;
+      this.showBottomContent = true;
+    }, 200);
 
     const formData = sessionStorage.getItem('formData');
     this.storedFormData = formData ? JSON.parse(formData) : {};

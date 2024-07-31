@@ -1,48 +1,57 @@
 
-<div class="d-flex form-container">
-  <div class="container col-8">
-    <form [formGroup]="frm_SignUp">
-      <h3 class="form-title">Sign Up</h3>
-      <div class="form-components">
-        <div class="Username">
-          <p-floatLabel>
-            <input type="text" pInputText formControlName="Username" id="Username" [style]="{'width':'100%'}">
-            <label for="Username">Username</label>
-          </p-floatLabel>
-          <div *ngIf="Username.touched">
-            <small *ngIf="Username.errors?.required && Username.value==''" class="invalid-text">Required</small>
-          </div>
-        </div>
-        <div class="Password">
-          <p-floatLabel>
-            <p-password id="Password" type="password" placeholder="Password" formControlName="Password"
-              styleClass="p-password p-component p-inputwrapper p-input-icon-right" class="Password" [style]="{'width':'100%'}"
-              [inputStyle]="{'width':'100%'}" [toggleMask]="true">
+<div>
+  <p-splitter [style]="{ height: '100vh' }">
+    <ng-template pTemplate>
+      <div class="d-flex form-container col-12" *ngIf="showBottomContent" @slideInFromBottom>
+        <form [formGroup]="frm_SignUp">
+          <h3 class="form-title p2">Sign Up</h3>
+          <div class="form-components">
+            <div class="Username">
+              <label for="Username">Username</label>
+              <input type="text" pInputText formControlName="Username" id="Username" [style]="{'width':'100%'}" class="input"
+                placeholder="Username">
+                <div *ngIf="Username.touched">
+                  <small *ngIf="Username.errors?.required && Username.value==''" class="invalid-text">Required</small>
+                </div>
+            </div>
+            <div class="Password">
+              <label for="Password">Password</label>
+              <p-password id="Password" type="password" placeholder="Password" formControlName="Password"
+                styleClass="p-password p-component p-inputwrapper p-input-icon-right"  [style]="{'width':'100%'}"
+                [inputStyle]="{'width':'100%'}" [toggleMask]="true"  [feedback]="false" class="input">
               </p-password>
-            <label for="Password">Password</label>
-          </p-floatLabel>
-          <div *ngIf="Password.touched">
-            <small *ngIf="Password.errors?.required && Password.value==''" class="invalid-text">Required</small>
-          </div>
-        </div>
-        <div class="ConfirmPassword">
-          <p-floatLabel>
-            <p-password id="ConfirmPassword" type="password" placeholder="Confirm Password" formControlName="ConfirmPassword"
-              styleClass="p-password p-component p-inputwrapper p-input-icon-right"  [style]="{'width':'100%'}"
-              [inputStyle]="{'width':'100%'}" [toggleMask]="true" [feedback]="false">
+              <div *ngIf="Password.touched">
+                <small *ngIf="Password.errors?.required && Password.value==''" class="invalid-text">Required</small>
+              </div>
+            </div>
+            <div class="ConfirmPassword">
+              <label for="ConfirmPassword">Confirm Password</label>
+              <p-password id="ConfirmPassword" type="password" placeholder="Confirm Password" formControlName="ConfirmPassword"
+                styleClass="p-password p-component p-inputwrapper p-input-icon-right"  [style]="{'width':'100%'}"
+                [inputStyle]="{'width':'100%'}" [toggleMask]="true" [feedback]="false">
               </p-password>
-            <label for="ConfirmPassword">Confirm Password</label>
-          </p-floatLabel>
-          <div *ngIf="ConfirmPassword.touched">
-            <small *ngIf="ConfirmPassword.errors?.required && ConfirmPassword.value==''" class="invalid-text">Required</small>
-            <small *ngIf="ConfirmPassword.errors?.PasswordMismatch" class="invalid-text">Passwords don't match</small>
+              <div *ngIf="ConfirmPassword.touched">
+                <small *ngIf="ConfirmPassword.errors?.required && ConfirmPassword.value==''" class="invalid-text">Required</small>
+                <small *ngIf="ConfirmPassword.errors?.PasswordMismatch" class="invalid-text">Passwords don't match</small>
+              </div>
+            </div>
+            <button type="submit" (click)="onSubmit()" [disabled]="!enableSubmit()">Sign Up</button><br><br>
+            <span>Already have an account? <a routerLink="/login">Log in</a></span>
           </div>
-        </div>
-        <button type="submit" (click)="onSubmit()" [disabled]="!enableSubmit()">Sign Up</button><br><br>
-        <span>Already have an account? <a routerLink="/login">Log in</a></span>
+        </form>
       </div>
-    </form>
-  </div>
+    </ng-template>
+    <ng-template pTemplate>
+      <div class="panel col-12" *ngIf="showTopContent" @slideInFromTop>
+        <!-- <h1 class="form-title msg">Join us today</h1> -->
+        <div class="company-logo"></div>
+        <h1 class="form-title p1">Azrieth<br>Handbags</h1>
+        <div class="content">
+          Where Fashion Meets Functionality
+        </div>
+      </div>
+    </ng-template>
+  </p-splitter>
 </div>
 
 

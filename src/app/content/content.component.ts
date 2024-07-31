@@ -1,19 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { MessageService } from 'primeng/api';
-import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrl: './content.component.css'
+  styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
 
-  constructor(
-    private messageService: MessageService,
-  ){}
+  constructor(private messageService: MessageService) {}
 
-  displayMessage(){
-    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.messageService.add({key:'1', severity: 'success', summary: 'Success', detail: 'Login Successful' });
+    });
   }
 }

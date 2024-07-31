@@ -1,29 +1,52 @@
 
+
+
+
+.panel{
+  background-color: orangered;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-logo{
+  height: 20vh;
+  width: 20vh;
+  background-image: url(../../assets/company-logo.png);
+  background-size: cover;
+}
+
+.p1{
+  font-size: 50px;
+  color: #000000;
+  max-height: 20vh;
+  margin-top: 3vh;
+}
+
+.content{
+  font-size: 25px;
+  color: #000000;
+}
+
 .d-flex {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-image: url(../../assets/background-image.jpg);
-  background-size: cover;
-}
-
-
-
-.container {
-  background-color: rgba(255, 255, 255, 0.3);
-  /* backdrop-filter: blur(3px); */
-  border-radius: 10px;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 100vh;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .form-title {
   text-align: center;
+}
+
+.p2{
   font-size: 24px;
   margin-bottom: 20px;
-  color: #333333;
+  color: #ffffff;
 }
 
 .form-components {
@@ -33,13 +56,19 @@
 
 .Username,.Password{
   font-size: 16px;
-  margin-top: 15px;
-  margin-bottom:30px
+  margin: 15px 0px;
 }
 
+/* .Password{
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom:30px
+} */
+
 label{
-  color: #000000;
+  color: white;
   font-size: 18px;
+  margin-bottom: -2px;
 }
 
 /* label[for="username"]{
@@ -58,6 +87,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  margin-top: 15px;
 }
 
 button:hover {
@@ -75,6 +105,18 @@ input.ng-invalid.ng-touched{
 
 .invalid-text{
   color:red;
+}
+
+.input:focus {
+  border-color: #007bff; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a blue shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+::ng-deep .p-password input:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: #007bff; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a blue shadow on focus */
 }
 
 

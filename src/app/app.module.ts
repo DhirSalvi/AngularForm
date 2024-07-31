@@ -16,7 +16,8 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { ContentComponent } from './content/content.component';
 import { MessagesModule } from 'primeng/messages';
 import { Message, MessageService } from 'primeng/api';
-import { Toast } from 'primeng/toast';
+import { ToastModule } from 'primeng/toast';
+import { SplitterModule } from 'primeng/splitter';
 
 
 
@@ -41,11 +42,12 @@ import { Toast } from 'primeng/toast';
     InputIconModule,
     IconFieldModule,
     MessagesModule,
+    ToastModule,
+    SplitterModule,
   ],
   providers: [
     provideAnimationsAsync(),
     MessageService,
-    Toast,
   ],
   bootstrap: [AppComponent]
 })
