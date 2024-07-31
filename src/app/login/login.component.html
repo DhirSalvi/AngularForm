@@ -17,8 +17,13 @@
           <div class="form-components">
             <div class="Username">
               <label for="Username">Username</label>
-              <input type="text" pInputText formControlName="Username" id="Username" [style]="{'width':'100%'}" class="input"
-                placeholder="Username">
+              <p-inputGroup>
+                <p-inputGroupAddon>
+                    <i class="pi pi-user"></i>
+                </p-inputGroupAddon>
+                <input type="text" pInputText formControlName="Username" id="Username" [style]="{'width':'100%'}" class="input"
+                  placeholder="Username">
+              </p-inputGroup>
               <small *ngIf="isInvalid('Username')" class="invalid-text">Required</small>
             </div>
             <div class="Password">

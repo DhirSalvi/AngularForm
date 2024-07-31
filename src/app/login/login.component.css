@@ -1,7 +1,4 @@
 
-
-
-
 .panel{
   background-color: orangered;
   display:flex;
@@ -53,29 +50,16 @@
   margin-top: 20px;
 }
 
-
 .Username,.Password{
   font-size: 16px;
   margin: 15px 0px;
 }
-
-/* .Password{
-  font-size: 16px;
-  margin-top: 15px;
-  margin-bottom:30px
-} */
 
 label{
   color: white;
   font-size: 18px;
   margin-bottom: 4px;
 }
-
-/* label[for="username"]{
-  margin-top: 0.3rem;
-} */
-
-
 
 button {
   width: 100%;
@@ -108,16 +92,17 @@ input.ng-invalid.ng-touched{
 }
 
 .input:focus {
-  border-color: #007bff; /* Change border color on focus */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a blue shadow on focus */
-  outline: none; /* Remove default outline */
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
 }
 
 ::ng-deep .p-password input:focus {
-  outline: none; /* Remove the default focus outline */
-  border-color: #007bff; /* Change border color on focus */
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a blue shadow on focus */
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
 
 
 

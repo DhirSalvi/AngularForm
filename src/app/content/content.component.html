@@ -1,6 +1,51 @@
 
-  <!-- content.component.html -->
-<p>Yay</p>
-<p-toast [life]="2000" key="1"></p-toast>
-<div>Hi</div>
+<!-- <p-toast [life]="2000" key="1"></p-toast> -->
 
+<p-toolbar class="custom-toolbar">
+  <div class="p-toolbar-group-start">
+    <p-avatar [ngStyle]="{'color': 'black'}"
+      label="P"
+      styleClass="mr-2"
+      size="xlarge"
+      shape="circle"
+      (click)="sidebarVisible = true" />
+      <p class="ml-2 mt-3 nav-bar-content-start" (click)="sidebarVisible = true">Alyssa</p>
+  </div>
+  <div class="p-toolbar-group-center nav-bar-content-center">
+    <div class="company-logo"></div>
+    <h1 class="form-title ml-3 head">Azrieth Handbags</h1>
+  </div>
+  <div class="p-toolbar-group-end">
+    <p class="mr-4 mt-2 nav-bar-content-end">Home</p>
+    <p class="mr-4 mt-2 nav-bar-content-end">Wishlist</p>
+    <p class="mr-4 mt-2 nav-bar-content-end">Shop</p>
+    <p class="mr-4 mt-2 nav-bar-content-end">Contact</p>
+    <p></p>
+  </div>
+</p-toolbar>
+
+<p-sidebar [(visible)]="sidebarVisible">
+  <ng-template pTemplate="header">
+    <p-avatar [ngStyle]="{'color': 'black'}"
+      label="P"
+      styleClass="mr-4"
+      size="large"
+      shape="circle"
+      class="sidebar-header-content" />
+      <p class="ml-1 mt-3 sidebar-header-content">Alyssa</p>
+  </ng-template>
+  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam explicabo neque, dolor ratione magni magnam earum deserunt nobis nemo esse est, vel, distinctio eos amet aliquid perspiciatis. Laudantium, provident accusamus.</p>
+</p-sidebar>
+
+<div class="nav-top">
+  <div class="nav-top-content">
+    <div class="Search">
+      <p-inputGroup>
+        <p-inputGroupAddon>
+            <i class="pi pi-search"></i>
+        </p-inputGroupAddon>
+        <input type="text" pInputText formControlName="Search" id="Search" class="input" placeholder="Search">
+      </p-inputGroup>
+    </div>
+  </div>
+</div>

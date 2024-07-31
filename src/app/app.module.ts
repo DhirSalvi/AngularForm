@@ -18,7 +18,12 @@ import { MessagesModule } from 'primeng/messages';
 import { Message, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { SplitterModule } from 'primeng/splitter';
-
+import { InputGroupModule } from 'primeng/inputgroup';
+import { ButtonModule } from 'primeng/button';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { ToolbarModule } from 'primeng/toolbar';
+import { AvatarModule } from 'primeng/avatar';
+import { SidebarModule } from 'primeng/sidebar';
 
 
 
@@ -44,6 +49,12 @@ import { SplitterModule } from 'primeng/splitter';
     MessagesModule,
     ToastModule,
     SplitterModule,
+    InputGroupModule,
+    ButtonModule,
+    InputGroupAddonModule,
+    ToolbarModule,
+    AvatarModule,
+    SidebarModule,
   ],
   providers: [
     provideAnimationsAsync(),

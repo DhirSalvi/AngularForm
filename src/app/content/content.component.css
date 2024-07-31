@@ -1,0 +1,64 @@
+.company-logo{
+  height: 10vh;
+  width: 10vh;
+  background-image: url(../../assets/company-logo.png);
+  background-size: cover;
+}
+
+::ng-deep .p-toolbar {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0;
+}
+
+.nav-bar-content-start{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav-bar-content-center{
+  position: absolute;
+  left:35%;
+}
+
+.nav-bar-content-end{
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav-bar-content-end:hover{
+  text-decoration: underline;
+}
+
+::ng-deep .p-sidebar-icon{
+  position:absolute;
+  right:5%
+}
+
+.sidebar-header-content{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.nav-top{
+  min-height:60vh;
+  border: 1px solid black;
+  background-color: black;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.input{
+  min-width: 100vh;
+}
+
+
